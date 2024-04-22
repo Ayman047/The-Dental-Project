@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dental Clinic</title>
+    <style>
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        nav {
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 10px 0;
+        }
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+            display: none; /* Hide all sections initially */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Dental Clinic</h1>
+    </header>
+    <nav>
+        <a href="#" onclick="showSection('about')">About Us</a>
+        <a href="#" onclick="showSection('services')">Services</a>
+        <a href="#" onclick="showSection('doctors')">Doctors</a>
+        <a href="#" onclick="showSection('location')">Location</a>
+        <a href="#" onclick="showSection('contact')">Contact Us</a>
+        <a href="login.html">Login</a>
+    </nav>
+    <div class="container" id="about">
+        <h2>About Us</h2>
+        <p>Insert information about your dental clinic here, including history, mission, and values.</p>
+    </div>
+    <div class="container" id="services">
+        <h2>Services</h2>
+        <p>Insert information about the services offered at your clinic, along with pricing details.</p>
+    </div>
+    <div class="container" id="doctors">
+        <h2>Our Doctors</h2>
+        <p>Insert information about your doctors, their qualifications, and achievements.</p>
+    </div>
+    <div class="container" id="location">
+        <h2>Location</h2>
+        <p>Insert information about the location of your clinic, including address and directions.</p>
+    </div>
+    <div class="container" id="contact">
+        <h2>Contact Us</h2>
+        <p>Insert contact information for your clinic, including phone number, email, and contact form.</p>
+    </div>
+    <div class="container" id="login">
+        <h2>Login</h2>
+        <form action="login.php" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+
+            <input type="submit" value="Login">
+        </form>
+    </div>
+
+    <script>
+        // Function to show/hide sections
+        function showSection(sectionId) {
+            // Hide all sections
+            var sections = document.querySelectorAll('.container');
+            sections.forEach(function(section) {
+                section.style.display = 'none';
+            });
+
+            // Show the selected section
+            var selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
